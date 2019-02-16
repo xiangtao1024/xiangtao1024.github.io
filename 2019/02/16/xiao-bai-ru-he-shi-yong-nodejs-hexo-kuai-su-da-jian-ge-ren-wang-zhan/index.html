@@ -6,8 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="小白如何使用Nodejs+Hexo快速搭建个人网站, 个人博客 编程 算法 WEB开发 人工智能">
     <meta name="description" content="如果你非常想拥有一个完全属于自己的个人站点，本篇文章将帮助你一步一步搭建属于自己的个人网站。搭建个人站点的方式有多种多样，本篇主要介绍基于Node.js环境的使用Hexo在自己的电脑上搭建一个属于自己的网站。
-###    安装前提
-安装 ">
+安装前提安装 Hexo 相当简">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -436,37 +435,52 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre><code>如果你非常想拥有一个完全属于自己的个人站点，本篇文章将帮助你一步一步搭建属于自己的个人网站。搭建个人站点的方式有多种多样，本篇主要介绍基于Node.js环境的使用Hexo在自己的电脑上搭建一个属于自己的网站。
-</code></pre><p>###<br>    安装前提</p>
-<pre><code>安装 Hexo 相当简单。然而在安装前，您必须检查电脑中是否已安装下列应用程序：
-</code></pre><ul>
-<li><p>Node.js</p>
-</li>
-<li><p>Git</p>
+                <p>如果你非常想拥有一个完全属于自己的个人站点，本篇文章将帮助你一步一步搭建属于自己的个人网站。搭建个人站点的方式有多种多样，本篇主要介绍基于Node.js环境的使用Hexo在自己的电脑上搭建一个属于自己的网站。</p>
+<h3 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h3><p>安装 Hexo 相当简单。然而在安装前，您必须检查电脑中是否已安装下列应用程序：</p>
+<ul>
+<li>Node.js</li>
+<li>Git</li>
+</ul>
 <p><strong>如果你的电脑上已经安装上面的应用程序，则可以跳过这一步。</strong></p>
 <p>下载Node.js：</p>
-<p><img src="https://pic.rmb.bdstatic.com/de7b13bf347aa6a9d688d659c969203b2219.png@c_1,w_773,h_419,x_0,y_0" alt=""></p>
-<p><img src="https://pic.rmb.bdstatic.com/84db42a5e47e51853a68f1673efd79c9.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_21,x_14,y_14" alt=""></p>
-<p><img src="https://pic.rmb.bdstatic.com/4e57b103ccd595bb8c7e5e50833f424c.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_25,x_16,y_16" alt=""></p>
-<p>下载Git：</p>
-<p><img src="https://pic.rmb.bdstatic.com/3aed45f60d00eb6929b481fadc40f3f9.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_20,x_13,y_13" alt=""></p>
-<p><img src="https://pic.rmb.bdstatic.com/7a2e0073332856d1b859d1a1192bdd56.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_29,x_19,y_19" alt=""></p>
-<p><img src="https://pic.rmb.bdstatic.com/916972fbf2ea99dbd4df7f4e8d2709b9.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_27,x_17,y_17" alt=""></p>
-<p><img src="https://pic.rmb.bdstatic.com/9f474c54b01032e8c4fe2f3861964a07.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_26,x_17,y_17" alt=""></p>
-<p>最后下载后的安装程序如下：</p>
-<p><img src="https://pic.rmb.bdstatic.com/8a460b0ced439e93ff5aeeccb9ac21d5.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_7,x_5,y_5" alt=""></p>
-<p>安装和普通的应用程序没区别，直接默认，一路点击下一步，下一步就OK了，两个都安装完成后win+R 输入CMD打开CMD命令行窗口，分别输入node -v和git命令查看是否安装成功。</p>
-<p><img src="https://pic.rmb.bdstatic.com/5d43222463b90565625cbf42233ae57b.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_8,x_5,y_5" alt=""></p>
-<p>node -v 显示版本号，则表示nodejs环境安装成功(版本号可能不一样，没事)，如果出现 不是内部或外部命令，也不是可运行的程序或批处理文件。则在安装的时候添加到环境变量出现了问题，可以手动添加到环境变量即可。</p>
-<p>git命令也是显示版本号则表示git安装成功， 如果也是显示出不是内部或外部命令，也不是可运行的程序或批处理文件，也是一样手动将其添加到环境变量即可。</p>
-<p><strong>如果安装成功，可以直接跳到安装Hexo那一步</strong></p>
-<p>这一步解决出现不是内部或外部命令，也不是可运行的程序或批处理文件的方法，出现这个问题，只需要将其命令所在的路径添加到环境变量即可，比如以添加git为例：</p>
-<p>首先找到git的安装目录</p>
-<p><img src="https://pic.rmb.bdstatic.com/656ba6147dcc6d273bfca1d4ca4bd747.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_25,x_16,y_16" alt=""></p>
-<p>因为我们要使用的是git命令，查看可知git</p>
-</li>
-</ul>
-<p>命令在其安装目录的bin目录和cmd目录下都有，可根据需要选择(比如还需要bash则可以选择Bin目录，还需要git-gui则选择cmd目录，如果两个都要，则可以先复制bin目录添加完后添加cmd目录)，比如复制bin目录的路径(我的为：C:\Program<br> Files\Git\bin)，然后找到高级系统设置（1：控制面板-&gt;系统和安全-&gt;系统 2：右击桌面计算机-&gt;点击属性<br>这两种方法都能找到高级系统设置）</p>
+<pre><code>![](https://pic.rmb.bdstatic.com/de7b13bf347aa6a9d688d659c969203b2219.png@c_1,w_773,h_419,x_0,y_0)
+
+![](https://pic.rmb.bdstatic.com/84db42a5e47e51853a68f1673efd79c9.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_21,x_14,y_14)
+
+![](https://pic.rmb.bdstatic.com/4e57b103ccd595bb8c7e5e50833f424c.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_25,x_16,y_16)
+
+下载Git：
+
+![](https://pic.rmb.bdstatic.com/3aed45f60d00eb6929b481fadc40f3f9.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_20,x_13,y_13)
+
+![](https://pic.rmb.bdstatic.com/7a2e0073332856d1b859d1a1192bdd56.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_29,x_19,y_19)
+
+![](https://pic.rmb.bdstatic.com/916972fbf2ea99dbd4df7f4e8d2709b9.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_27,x_17,y_17)
+
+![](https://pic.rmb.bdstatic.com/9f474c54b01032e8c4fe2f3861964a07.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_26,x_17,y_17)
+
+最后下载后的安装程序如下：
+
+![](https://pic.rmb.bdstatic.com/8a460b0ced439e93ff5aeeccb9ac21d5.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_7,x_5,y_5)
+
+安装和普通的应用程序没区别，直接默认，一路点击下一步，下一步就OK了，两个都安装完成后win+R 输入CMD打开CMD命令行窗口，分别输入node -v和git命令查看是否安装成功。
+
+![](https://pic.rmb.bdstatic.com/5d43222463b90565625cbf42233ae57b.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_8,x_5,y_5)
+
+node -v 显示版本号，则表示nodejs环境安装成功(版本号可能不一样，没事)，如果出现 不是内部或外部命令，也不是可运行的程序或批处理文件。则在安装的时候添加到环境变量出现了问题，可以手动添加到环境变量即可。
+
+git命令也是显示版本号则表示git安装成功， 如果也是显示出不是内部或外部命令，也不是可运行的程序或批处理文件，也是一样手动将其添加到环境变量即可。
+
+**如果安装成功，可以直接跳到安装Hexo那一步**
+
+这一步解决出现不是内部或外部命令，也不是可运行的程序或批处理文件的方法，出现这个问题，只需要将其命令所在的路径添加到环境变量即可，比如以添加git为例：
+
+首先找到git的安装目录
+
+![](https://pic.rmb.bdstatic.com/656ba6147dcc6d273bfca1d4ca4bd747.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_25,x_16,y_16)
+
+因为我们要使用的是git命令，查看可知git
+</code></pre><p>命令在其安装目录的bin目录和cmd目录下都有，可根据需要选择(比如还需要bash则可以选择Bin目录，还需要git-gui则选择cmd目录，如果两个都要，则可以先复制bin目录添加完后添加cmd目录)，比如复制bin目录的路径(我的为：C:\Program<br> Files\Git\bin)，然后找到高级系统设置（1：控制面板-&gt;系统和安全-&gt;系统 2：右击桌面计算机-&gt;点击属性<br>这两种方法都能找到高级系统设置）</p>
 <pre><code>![](https://pic.rmb.bdstatic.com/f1b8581946e66e451d4b98bf720a182b.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_19,x_12,y_12)
 
 ![](https://pic.rmb.bdstatic.com/47d82db77953c421cc52bbc50b3c2f51.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_18,x_12,y_12)
@@ -474,39 +488,34 @@
 ![](https://pic.rmb.bdstatic.com/8366b273416d706b4a3386e873630282.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_19,x_12,y_12)
 
 ![](https://pic.rmb.bdstatic.com/46c2bb909484c80f7fe9af9f9dc67be0.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_14,x_9,y_9)
-</code></pre><p>###<br>    安装 Hexo</p>
-<pre><code>当环境都安装配置成功后，则可以使用Npm安装Hexo了，如果npm安装很慢的话，可以先npm install -g cnpm 安装淘宝的npm镜像cnpm，然后使用cnpm安装hexo也可以。
-
-&lt;span class=&quot;line&quot;&gt;1. 在CMD命令窗口输入：npm install -g hexo-cli或者&lt;span class=&quot;line&quot;&gt;cnpm install -g hexo-cli安装hexo-cli
-</code></pre><p></p>
-<pre><code>![](https://pic.rmb.bdstatic.com/301b4e85ef5d16cff3a7e1273ac9ce88.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_23,x_15,y_15)
-
-&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;line&quot;&gt;2. 将CMD命令切换到自己的项目需要保存的目录下， 使用hexo init 项目名称初始化项目，然后等待下载结束： 
-</code></pre><p></p>
+</code></pre><h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><pre><code>当环境都安装配置成功后，则可以使用Npm安装Hexo了，如果npm安装很慢的话，可以先npm install -g cnpm 安装淘宝的npm镜像cnpm，然后使用cnpm安装hexo也可以。
+</code></pre><ol>
+<li><p>在CMD命令窗口输入：npm install -g hexo-cli或者<span class="line">cnpm install -g hexo-cli安装hexo-cli</span></p>
+<p> <img src="https://pic.rmb.bdstatic.com/301b4e85ef5d16cff3a7e1273ac9ce88.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_23,x_15,y_15" alt=""></p>
+</li>
+<li><p>将CMD命令切换到自己的项目需要保存的目录下， 使用hexo init 项目名称初始化项目，然后等待下载结束： </p>
+</li>
+</ol>
 <pre><code>![](https://pic.rmb.bdstatic.com/7c8ac49dbf62f73a22fa4c1b53cd76fa.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_17,x_11,y_11)
 
 成功后会生成如下文件：
 
 ![](https://pic.rmb.bdstatic.com/da1286e69600915a30bb93d564421f18.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_12,x_8,y_8)
+</code></pre><ol start="3">
+<li><p>进入到项目目录里 cd xtblog, 使用npm install 或者cnpm install安装相应的包</p>
+<p> <img src="https://pic.rmb.bdstatic.com/f38b265c823077281b694758aa9d7047.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_17,x_11,y_11" alt=""></p>
+</li>
+<li><p>使用hexo g生成静态文件。</p>
+<p> <img src="https://pic.rmb.bdstatic.com/2f319df38908b6bb2b8f205e7fb96391.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_18,x_12,y_12" alt=""></p>
+<p> <img src="https://pic.rmb.bdstatic.com/c78860946bcceb7b0757991c0d4a2646.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_22,x_14,y_14" alt=""></p>
+</li>
+<li><p>使用hexo s 启动我们的网站</p>
+<p> <img src="https://pic.rmb.bdstatic.com/b5409810e417370c3d36689ea71c1b94.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_14,x_9,y_9" alt=""></p>
+<p> <img src="https://pic.rmb.bdstatic.com/71467c0d808415403b3e3274cf4aefac.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_31,x_20,y_20" alt=""></p>
+<p> 如果显示上面的页面则已经在自己的电脑上跑起了自己的个人网站了。hexo具体的使用方法以及部署到服务器上让能连上网的其他人访问到该网站的教程将在之后的文章中介绍。</p>
+</li>
+</ol>
 
-3. 进入到项目目录里 cd xtblog, 使用npm install 或者cnpm install安装相应的包
-
-![](https://pic.rmb.bdstatic.com/f38b265c823077281b694758aa9d7047.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_17,x_11,y_11)
-
-4. 使用hexo g生成静态文件。
-
-![](https://pic.rmb.bdstatic.com/2f319df38908b6bb2b8f205e7fb96391.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_18,x_12,y_12)
-
-![](https://pic.rmb.bdstatic.com/c78860946bcceb7b0757991c0d4a2646.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_22,x_14,y_14)
-
-5 使用hexo s 启动我们的网站
-
-![](https://pic.rmb.bdstatic.com/b5409810e417370c3d36689ea71c1b94.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_14,x_9,y_9)
-
-![](https://pic.rmb.bdstatic.com/71467c0d808415403b3e3274cf4aefac.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_31,x_20,y_20)
-
-如果显示上面的页面则已经在自己的电脑上跑起了自己的个人网站了。hexo具体的使用方法以及部署到服务器上让能连上网的其他人访问到该网站的教程将在之后的文章中介绍。
-</code></pre>
             </div>
             <hr>
 
@@ -683,7 +692,7 @@
                 <div class="card-content article-content">
                     <div class="summary">当时用Hexo新建自己的网站的时候，生成的目录结构如下(还不知道怎样生成的可以到我的主页阅读《小白如何使用Nodejs+Hexo快速搭建个人网站》该篇文章)：
 
-![](https://pic.rmb.bdstatic.com/75b1db</div>
+主要文件夹说明如下node_modules: 第三方插件安装目录，Node.j</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-16

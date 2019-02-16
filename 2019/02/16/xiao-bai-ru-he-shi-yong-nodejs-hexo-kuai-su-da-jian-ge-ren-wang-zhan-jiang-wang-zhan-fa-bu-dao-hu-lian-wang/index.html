@@ -5,8 +5,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="小白如何使用Nodejs+Hexo快速搭建个人网站：将网站发布到互联网, 个人博客 编程 算法 WEB开发 人工智能">
-    <meta name="description" content="现在我们的网站还只是在自己的电脑上才能访问，要想每一个连上互联网的人都可以访问到我们的网站，我们就需要将我们的网站发布到互联网上，要发布我们的网站，一般需要具备三个元素，分别是：网站域名、网站空间和网站程序。也就是我们需要：
-1.申请域名；">
+    <meta name="description" content="现在我们的网站还只是在自己的电脑上才能访问，要想每一个连上互联网的人都可以访问到我们的网站，我们就需要将我们的网站发布到互联网上，要发布我们的网站，一般需要具备三个元素，分别是：网站域名、网站空间和网站程序。也就是我们需要：1.申请域名；2">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -435,55 +434,30 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre><code>现在我们的网站还只是在自己的电脑上才能访问，要想每一个连上互联网的人都可以访问到我们的网站，我们就需要将我们的网站发布到互联网上，要发布我们的网站，一般需要具备三个元素，分别是：网站域名、网站空间和网站程序。也就是我们需要：
-</code></pre><p>1.申请域名；<br>2.申请空间或者购买服务器；<br>3.如果购买服务器还需要搭建运行环境；<br>4.FTP上传网站；</p>
-<pre><code>这些都需要花钱的，那我们如何免费发布我们的网站呢，网上有免费空间可以申请，不过比较麻烦还不稳定，这里我们还可以有另外选择，我们可以将其发布到github或者码云上，GitHub是一个面向开源及私有软件项目的托管平台，只支持git
-</code></pre><p> 作为唯一的版本库格式进行托管, 也就是一个代码托管平台，号称为程序员的TX交友平台，Github<br>Pages则是github上的一项功能，可以放置网页文件到指定文件夹，然后给你一个专属域名用于展示一些项目，但现在大多用来开发制作个人博客网站,</p>
-<p>但是这个网站勒，是国外滴，也就是说是全英文的，那对于小白来说是有点晕了，像小编这种英语水平很菜的人来说，玩他可花了不小功夫，但是，咋们国内有一个和他功能都差不多的平台，也就是码云，他是国内版的github,<br> 主要是中文的，那就介绍怎样在码云上发布我们的个人网站吧。</p>
-<p>###<br>    注册账号</p>
-<pre><code>![](https://pic.rmb.bdstatic.com/8a8f90c89b5e47c1268e65ae6b572389.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_21,x_14,y_14)
-
-![](https://pic.rmb.bdstatic.com/6a9308166e313b75e872b4000d90c3db.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_28,x_18,y_18)
-
-![](https://pic.rmb.bdstatic.com/92416e7b4093d6120bfdab3a83cd3451.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_18,x_12,y_12)
-</code></pre><p>###<br>    新建仓库</p>
-<pre><code>![](https://pic.rmb.bdstatic.com/17f9b2f963b2d57bcf04f12c460776d3.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_25,x_16,y_16)
-
-![](https://pic.rmb.bdstatic.com/9079593911a87a5d54b0dc6d640e2b2c.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_23,x_15,y_15)
-
-![](https://pic.rmb.bdstatic.com/7bd77b1a24410c9e546268215ee56412.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_12,x_8,y_8)
-
-可以看到，我们已经在码云上新建一个仓库，该仓库就是存放我们网站的地方。
-
-在我们仓库右边，可以看到有个克隆下载按钮，该按钮是下载我们的到本地的，还有一个地址，该地址很重要，将是我们上传代码的地址，先复制记住。
-
-![](https://pic.rmb.bdstatic.com/ebcb45d34af51679fd3fc4f7ec5412ee.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_27,x_17,y_17)
-
-我们在仓库中新建一个Index.html页面测试一下效果：
-
-![](https://pic.rmb.bdstatic.com/166f5a196be429cabe40af893a9b7b3c.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_17,x_11,y_11)
-
-![](https://pic.rmb.bdstatic.com/a91cb71f0e9282aca3b7bb67c0ef4dba.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_12,x_8,y_8)
-
-![](https://pic.rmb.bdstatic.com/22849c628614a16580e3b0297d1027a3.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_17,x_11,y_11)
-
-提交后的文件列表如下：
-
-![](https://pic.rmb.bdstatic.com/f1cb5d5861e7d5cb67940e3316eb1f1b.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_16,x_10,y_10)
-
-然后找到我们的网站访问连接:
-
-![](https://pic.rmb.bdstatic.com/ce168c642f7184761fb29c0db19567d2.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_25,x_16,y_16)
-
-![](https://pic.rmb.bdstatic.com/1d187686e3d3e40c03b2fabdb8b25396.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_15,x_10,y_10)
-
-![](https://pic.rmb.bdstatic.com/9d85a9830fa6daafe72cca18869cb1d6.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_17,x_11,y_11)
-
-然后可以访问生成的链接，效果如下：
-
-![](https://pic.rmb.bdstatic.com/7f431471621d69bd491e378e8af5efd8.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_16,x_10,y_10)
-</code></pre><p>###<br>    配置项目</p>
-<pre><code>要把我们的网站上传到码云上，我们还需要下载安装一个插件，该插件安装很简单，使用
+                <p>现在我们的网站还只是在自己的电脑上才能访问，要想每一个连上互联网的人都可以访问到我们的网站，我们就需要将我们的网站发布到互联网上，要发布我们的网站，一般需要具备三个元素，分别是：网站域名、网站空间和网站程序。也就是我们需要：<br>1.申请域名；<br>2.申请空间或者购买服务器；<br>3.如果购买服务器还需要搭建运行环境；<br>4.FTP上传网站；</p>
+<p>这些都需要花钱的，那我们如何免费发布我们的网站呢，网上有免费空间可以申请，不过比较麻烦还不稳定，这里我们还可以有另外选择，我们可以将其发布到github或者码云上，GitHub是一个面向开源及私有软件项目的托管平台，只支持git作为唯一的版本库格式进行托管, 也就是一个代码托管平台，号称为程序员的TX交友平台，Github<br>Pages则是github上的一项功能，可以放置网页文件到指定文件夹，然后给你一个专属域名用于展示一些项目，但现在大多用来开发制作个人博客网站,但是这个网站勒，是国外滴，也就是说是全英文的，那对于小白来说是有点晕了，像小编这种英语水平很菜的人来说，玩他可花了不小功夫，但是，咋们国内有一个和他功能都差不多的平台，也就是码云，他是国内版的github,主要是中文的，那就介绍怎样在码云上发布我们的个人网站吧。</p>
+<h3 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h3><p><img src="https://pic.rmb.bdstatic.com/8a8f90c89b5e47c1268e65ae6b572389.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_21,x_14,y_14" alt=""></p>
+<p><img src="https://pic.rmb.bdstatic.com/6a9308166e313b75e872b4000d90c3db.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_28,x_18,y_18" alt=""></p>
+<p><img src="https://pic.rmb.bdstatic.com/92416e7b4093d6120bfdab3a83cd3451.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_18,x_12,y_12" alt=""></p>
+<h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><p><img src="https://pic.rmb.bdstatic.com/17f9b2f963b2d57bcf04f12c460776d3.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_25,x_16,y_16" alt=""></p>
+<p><img src="https://pic.rmb.bdstatic.com/9079593911a87a5d54b0dc6d640e2b2c.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_23,x_15,y_15" alt=""></p>
+<p><img src="https://pic.rmb.bdstatic.com/7bd77b1a24410c9e546268215ee56412.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_12,x_8,y_8" alt=""></p>
+<p>可以看到，我们已经在码云上新建一个仓库，该仓库就是存放我们网站的地方。</p>
+<p>在我们仓库右边，可以看到有个克隆下载按钮，该按钮是下载我们的到本地的，还有一个地址，该地址很重要，将是我们上传代码的地址，先复制记住。</p>
+<p><img src="https://pic.rmb.bdstatic.com/ebcb45d34af51679fd3fc4f7ec5412ee.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_27,x_17,y_17" alt=""></p>
+<p>我们在仓库中新建一个Index.html页面测试一下效果：</p>
+<p><img src="https://pic.rmb.bdstatic.com/166f5a196be429cabe40af893a9b7b3c.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_17,x_11,y_11" alt=""></p>
+<p><img src="https://pic.rmb.bdstatic.com/a91cb71f0e9282aca3b7bb67c0ef4dba.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_12,x_8,y_8" alt=""></p>
+<p><img src="https://pic.rmb.bdstatic.com/22849c628614a16580e3b0297d1027a3.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_17,x_11,y_11" alt=""></p>
+<p>提交后的文件列表如下：</p>
+<p><img src="https://pic.rmb.bdstatic.com/f1cb5d5861e7d5cb67940e3316eb1f1b.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_16,x_10,y_10" alt=""></p>
+<p>然后找到我们的网站访问连接:</p>
+<p><img src="https://pic.rmb.bdstatic.com/ce168c642f7184761fb29c0db19567d2.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_25,x_16,y_16" alt=""></p>
+<p><img src="https://pic.rmb.bdstatic.com/1d187686e3d3e40c03b2fabdb8b25396.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_15,x_10,y_10" alt=""></p>
+<p><img src="https://pic.rmb.bdstatic.com/9d85a9830fa6daafe72cca18869cb1d6.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_17,x_11,y_11" alt=""></p>
+<p>然后可以访问生成的链接，效果如下：</p>
+<p><img src="https://pic.rmb.bdstatic.com/7f431471621d69bd491e378e8af5efd8.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_16,x_10,y_10" alt=""></p>
+<h3 id="配置项目"><a href="#配置项目" class="headerlink" title="配置项目"></a>配置项目</h3><pre><code>要把我们的网站上传到码云上，我们还需要下载安装一个插件，该插件安装很简单，使用
 
 &lt;span class=&quot;line&quot;&gt;cnpm install hexo-deployer-git --save&lt;/span&gt;
 
@@ -504,8 +478,7 @@
 在更改项目的url为我们的网址，root为website。
 
 ![](https://pic.rmb.bdstatic.com/202093b108b6cff478d80bbfe33024ff.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_9,x_6,y_6)
-</code></pre><p>###<br>    发布网站</p>
-<pre><code>使用hexo clean,清理一下项目， hexo g重新生成项目, 最后使用hexo deploy发布项目呢。
+</code></pre><h3 id="发布网站"><a href="#发布网站" class="headerlink" title="发布网站"></a>发布网站</h3><pre><code>使用hexo clean,清理一下项目， hexo g重新生成项目, 最后使用hexo deploy发布项目呢。
 
 ![](https://pic.rmb.bdstatic.com/9d8f266cb55c032301a269e58e892ba5.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_13,x_9,y_9)
 
@@ -698,8 +671,7 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">现在我们的网站还只是在自己的电脑上才能访问，要想每一个连上互联网的人都可以访问到我们的网站，我们就需要将我们的网站发布到互联网上，要发布我们的网站，一般需要具备三个元素，分别是：网站域名、网站空间和网站程序。也就是我们需要：
-1.申请域名；</div>
+                    <div class="summary">现在我们的网站还只是在自己的电脑上才能访问，要想每一个连上互联网的人都可以访问到我们的网站，我们就需要将我们的网站发布到互联网上，要发布我们的网站，一般需要具备三个元素，分别是：网站域名、网站空间和网站程序。也就是我们需要：1.申请域名；2</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-16
@@ -749,10 +721,9 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">### 
-    &lt;span class=&quot;year&quot;&gt;2019-02-15&lt;/span&gt;13:05
-
-![](https://pic.rmb.bdstatic.com/84064a42bf659</div>
+                    <div class="summary">
+本篇文章接着上篇文章继续讲解Hexo详细使用教程，在上篇文章中已经讲解了怎样发表一篇文章。
+主题的设置我们现在的个人网站使用的是Hexo默认的主题，可能有点丑，不那么美观，不过Hexo的主题是有很多供我们选择的，我们可以选择一个我们喜欢的</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-16
