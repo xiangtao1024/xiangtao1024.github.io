@@ -457,45 +457,27 @@
 <p><img src="https://pic.rmb.bdstatic.com/9d85a9830fa6daafe72cca18869cb1d6.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_17,x_11,y_11" alt=""></p>
 <p>然后可以访问生成的链接，效果如下：</p>
 <p><img src="https://pic.rmb.bdstatic.com/7f431471621d69bd491e378e8af5efd8.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_16,x_10,y_10" alt=""></p>
-<h3 id="配置项目"><a href="#配置项目" class="headerlink" title="配置项目"></a>配置项目</h3><pre><code>要把我们的网站上传到码云上，我们还需要下载安装一个插件，该插件安装很简单，使用
+<h3 id="配置项目"><a href="#配置项目" class="headerlink" title="配置项目"></a>配置项目</h3><p>要把我们的网站上传到码云上，我们还需要下载安装一个插件，该插件安装很简单，使用</p>
+<pre><code>cnpm install hexo-deployer-git --save
+</code></pre><p>命令安装。</p>
+<p><img src="https://pic.rmb.bdstatic.com/fbf1963014ba3df3b91209adbe4d7f28.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_19,x_12,y_12" alt=""></p>
+<p>然后更改_config.yml配置文件。</p>
+<p>还记得刚才复制的地址吗：</p>
+<p><img src="https://pic.rmb.bdstatic.com/ebcb45d34af51679fd3fc4f7ec5412ee.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_27,x_17,y_17" alt=""></p>
+<p>将改地址复制到配置文件的depoly repository，type为git, branch为master。</p>
+<p><img src="https://pic.rmb.bdstatic.com/9252964bb28dabd7cfb73ecd622ec497.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_14,x_9,y_9" alt=""></p>
+<p>在更改项目的url为我们的网址，root为website。</p>
+<p><img src="https://pic.rmb.bdstatic.com/202093b108b6cff478d80bbfe33024ff.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_9,x_6,y_6" alt=""></p>
+<h3 id="发布网站"><a href="#发布网站" class="headerlink" title="发布网站"></a>发布网站</h3><p>使用hexo clean,清理一下项目， hexo g重新生成项目, 最后使用hexo deploy发布项目呢。</p>
+<p><img src="https://pic.rmb.bdstatic.com/9d8f266cb55c032301a269e58e892ba5.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_13,x_9,y_9" alt=""></p>
+<p><img src="https://pic.rmb.bdstatic.com/f0dfd9a6bbb023380c86c949106dcf24.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_14,x_9,y_9" alt=""></p>
+<p>中途会让输入账号密码，输入在码云上注册的账号(邮箱)和密码即可。</p>
+<p><img src="https://pic.rmb.bdstatic.com/16bfba0014d573f26c29fee4169879fc.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_16,x_10,y_10" alt=""></p>
+<p>上传完后到查看码云项目就会多了我们的网站文件。</p>
+<p><img src="https://pic.rmb.bdstatic.com/a2358ff2cc824ca2cbc2f6c0e5aff47e.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_23,x_15,y_15" alt=""></p>
+<p>最后访问我们的网址，就可以看到效果了，我们可以把这个网址发给别人，别人也就可以访问了。</p>
+<p><img src="https://pic.rmb.bdstatic.com/4d589282e1a1b8bb8745399b2a60edae.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_31,x_20,y_20" alt="">   </p>
 
-&lt;span class=&quot;line&quot;&gt;cnpm install hexo-deployer-git --save&lt;/span&gt;
-
-命令安装。
-
-![](https://pic.rmb.bdstatic.com/fbf1963014ba3df3b91209adbe4d7f28.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_19,x_12,y_12)
-
-然后更改_config.yml配置文件。
-
-还记得刚才复制的地址吗：
-
-![](https://pic.rmb.bdstatic.com/ebcb45d34af51679fd3fc4f7ec5412ee.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_27,x_17,y_17)
-
-将改地址复制到配置文件的depoly repository，type为git, branch为master。
-
-![](https://pic.rmb.bdstatic.com/9252964bb28dabd7cfb73ecd622ec497.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_14,x_9,y_9)
-
-在更改项目的url为我们的网址，root为website。
-
-![](https://pic.rmb.bdstatic.com/202093b108b6cff478d80bbfe33024ff.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_9,x_6,y_6)
-</code></pre><h3 id="发布网站"><a href="#发布网站" class="headerlink" title="发布网站"></a>发布网站</h3><pre><code>使用hexo clean,清理一下项目， hexo g重新生成项目, 最后使用hexo deploy发布项目呢。
-
-![](https://pic.rmb.bdstatic.com/9d8f266cb55c032301a269e58e892ba5.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_13,x_9,y_9)
-
-![](https://pic.rmb.bdstatic.com/f0dfd9a6bbb023380c86c949106dcf24.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_14,x_9,y_9)
-
-中途会让输入账号密码，输入在码云上注册的账号(邮箱)和密码即可。
-
-![](https://pic.rmb.bdstatic.com/16bfba0014d573f26c29fee4169879fc.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_16,x_10,y_10)
-
-上传完后到查看码云项目就会多了我们的网站文件。
-
-![](https://pic.rmb.bdstatic.com/a2358ff2cc824ca2cbc2f6c0e5aff47e.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_23,x_15,y_15)
-
-最后访问我们的网址，就可以看到效果了，我们可以把这个网址发给别人，别人也就可以访问了。
-
-![](https://pic.rmb.bdstatic.com/4d589282e1a1b8bb8745399b2a60edae.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_31,x_20,y_20)
-</code></pre>
             </div>
             <hr>
 
