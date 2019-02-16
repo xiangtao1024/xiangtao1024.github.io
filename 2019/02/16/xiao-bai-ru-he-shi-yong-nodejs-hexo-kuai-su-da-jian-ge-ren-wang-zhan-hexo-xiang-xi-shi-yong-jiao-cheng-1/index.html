@@ -1,0 +1,1067 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="小白如何使用Nodejs+Hexo快速搭建个人网站：Hexo详细使用教程1, 个人博客 编程 算法 WEB开发 人工智能">
+    <meta name="description" content="当时用Hexo新建自己的网站的时候，生成的目录结构如下(还不知道怎样生成的可以到我的主页阅读《小白如何使用Nodejs+Hexo快速搭建个人网站》该篇文章)：
+
+![](https://pic.rmb.bdstatic.com/75b1db">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>小白如何使用Nodejs+Hexo快速搭建个人网站：Hexo详细使用教程1 | 搬砖码农的人生</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">搬砖码农的人生</span>
+                    </a>
+                </div>
+                
+
+<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">搬砖码农的人生</div>
+        <div class="logo-desc">
+            
+            个人博客网站，专注于编程，算法，WEB开发和人工智能
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/xiangtao19940910" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+    <div class="social-link">
+    <a href="https://github.com/xiangtao19940910" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1782227898@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1782227898" class="tooltipped" data-tooltip="QQ联系我: 1782227898" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+        <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/xiangtao19940910" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+</header>
+
+
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        小白如何使用Nodejs+Hexo快速搭建个人网站：Hexo详细使用教程1
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1,
+    #articleContent h2,
+    #articleContent h3,
+    #articleContent h4,
+    #articleContent h5,
+    #articleContent h6 {
+        padding-top: 76px;
+        margin-top: -76px;
+    }
+
+    #articleContent h1 {
+        line-height: 3.5rem;
+    }
+
+    #articleContent h2 {
+        line-height: 3.2rem;
+    }
+
+    #articleContent h3 {
+        line-height: 2.8rem;
+    }
+
+    #articleContent h4 {
+        line-height: 2.5rem;
+    }
+
+    #articleContent h5 {
+        line-height: 2.2rem;
+    }
+
+    #articleContent h6 {
+        line-height: 1.9rem;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Hexo/" target="_blank">
+                                <span class="chip bg-color">Hexo</span>
+                            </a>
+                        
+                            <a href="/tags/Node-js/" target="_blank">
+                                <span class="chip bg-color">Node.js</span>
+                            </a>
+                        
+                            <a href="/tags/个人网站/" target="_blank">
+                                <span class="chip bg-color">个人网站</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-02-16
+                </div>
+
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <pre><code>当时用Hexo新建自己的网站的时候，生成的目录结构如下(还不知道怎样生成的可以到我的主页阅读《小白如何使用Nodejs+Hexo快速搭建个人网站》该篇文章)：
+
+![](https://pic.rmb.bdstatic.com/75b1db163a7e31a3ccb41ab6bf2732b8.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_13,x_9,y_9)
+</code></pre><p>###<br>    主要文件夹说明如下<span class=""></span></p>
+<pre><code>node_modules: 第三方插件安装目录，Node.js里的内容，使用npm或者cnpm命令安装，相应的信息也会写入到package.json文件中.
+
+public: 当使用hexo g命令生成的相关网站文件就放在该目录之下**.
+</code></pre><p>**</p>
+<pre><code>_config.yml: 网站的配置信息，您可以在此配置大部分的参数。
+
+package.json: 应用程序的信息。
+
+scaffolds: 模版文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。
+
+Hexo的模板是指在新建的markdown文件中默认填充的内容。例如，如果您修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。
+
+source: 资源文件夹是存放用户资源的地方。除_posts文件夹之外，开头命名为_(下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到public文件夹，而其他文件会被拷贝过去。
+
+themes: 主题 文件夹。Hexo 会根据主题来生成静态页面。
+</code></pre><p>###<br>    配置网站</p>
+<pre><code>网站的配置信息在项目的_config.yml文件中配置，该文件使用的是yml语法。yaml语法，都是以k-v形式存在的，并且使用换行和空格来表示键值和属性的区分，#后面为注释。
+
+k:(空格)v：表示一对键值对（空格必须有）；
+
+以空格的缩进来控制层级关系；只要是左对齐的一列数据，都是同一个层级的
+
+yml语法在之后小编在单独拿出来详细说明，这里大部分只要修改对应的配置就可以了。
+
+打开_config.yml文件
+
+![](https://pic.rmb.bdstatic.com/a8487ce77e393c034ba6cd62494df018.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_16,x_10,y_10)
+
+可以看到常用的配置项已经帮我们写好来，我们只需要修改其值为我们想要的值就行了，现在介绍其中的配置项：
+
+**网站：**
+
+![](http://pic.rmb.bdstatic.com/6884fb644beb642c72cd8097c7e7f3eb7854.jpeg)
+
+**网址**
+
+![](http://pic.rmb.bdstatic.com/9e8a5895587af40422fc94e3904dafa54137.jpeg)
+
+网站存放在子目录，比如您的网站存放在子目录中，例/blog，则请将您的url设为/blog并把root设为 /blog/。
+
+**目录：**
+
+![](http://pic.rmb.bdstatic.com/f69bd58936a0748f7d1974a0d7a725ac2199.jpeg)
+</code></pre><blockquote>
+<p><strong>提示</strong></p>
+<pre><code>    如果您刚刚开始接触Hexo，通常没有必要修改这一部分的值。
+</code></pre></blockquote>
+<pre><code>**文章：**
+
+![](http://pic.rmb.bdstatic.com/58169d01e6c02b27094e7ec0859778779602.jpeg)
+</code></pre><blockquote>
+<p><strong>相对地址</strong></p>
+<pre><code>    默认情况下，Hexo生成的超链接都是绝对地址。例如，如果您的网站域名为example.com,您有一篇文章名为hello，那么绝对链接可能像这样：http://example.com/hello.html，它是**绝对**于域名的。相对链接像这样：/hello.html，也就是说，无论用什么域名访问该站点，都没有关系，这在进行反向代理时可能用到。通常情况下，建议使用绝对地址。
+</code></pre></blockquote>
+<pre><code>**分类 &amp;amp; 标签：**
+
+![](http://pic.rmb.bdstatic.com/08da7b920a871147e8ff30a62d5b5cb38309.jpeg)
+
+**日期 / 时间格式：**
+
+Hexo 使用 Moment.js 来解析和显示时间。
+
+![](http://pic.rmb.bdstatic.com/08ae4d7c6df366a22518907a496c59ae5720.jpeg)
+
+**分页：**
+
+![](http://pic.rmb.bdstatic.com/c96af223e2ac7686e945f0a5f77b6e607429.jpeg)
+
+**扩展：**
+
+![](http://pic.rmb.bdstatic.com/8353aaf31e901ca84ec95f448853eaf26658.jpeg)
+
+先配置点网站信息，其他可根据需要进行配置:
+
+![](https://pic.rmb.bdstatic.com/c1529911f209e476b64a9c201f65abaa.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_12,x_8,y_8)
+
+重新生成网站，然后点击鼠标右键，查看页面源代码，也可以直接点击public目录下的Index.html文件查看，可以看到所配置项已经生效。
+
+![](https://pic.rmb.bdstatic.com/6bf9e1c9b607e108a946bc4fe4df982f.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_23,x_15,y_15)
+</code></pre><p>###<br>    新建一篇文章</p>
+<pre><code>你可以执行&lt;span class=&quot;line&quot;&gt;hexo new [layout] &amp;lt;title&amp;gt;&lt;/span&gt;命令来创建一篇新文章。您可以在命令中指定文章的布局（layout），默认为post，可以通过修改_config.yml中的default_layout参数来指定默认布局。Hexo
+</code></pre><p>有三种默认布局：post、page和draft，它们分别对应不同的路径，而您自定义的其他布局和post相同，都将储存到source/_posts文件夹，page存储在source下，draft存储在source/_drafts文件夹下。</p>
+<pre><code>Hexo 默认以标题做为文件名称，但您可编辑new_post_name参数来改变默认的文件名称，举例来说，设为:year-:month-:day-:title.md可让您更方便的通过日期来管理文章。
+
+![](http://pic.rmb.bdstatic.com/b176e67dc1b0af1dcd61bc487d09cb841302.jpeg)
+
+![](https://pic.rmb.bdstatic.com/1d2c6d822a02e616c425152598dd2ae3.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_17,x_11,y_11)
+
+重新生成运行网站，也可以看到看到新建的文章已经显示出来了。
+
+![](https://pic.rmb.bdstatic.com/8f6b5ac633c405132c672f7ec3b8d854.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_31,x_20,y_20)
+
+这时候会在source/_post文件夹下生成《小白如何使用Nodejs-Hexo快速搭建个人网站.md》文件，可以看到该目录下已经有一个默认的《hello-world.md》文件，该文件就是我们生成网站时默认显示的hello
+</code></pre><p> world信息，我们到配置文件中更改new_post_name来配置生成的文件名，你可以根据自己的要求来配置，我的配置如下: </p>
+<pre><code>![](https://pic.rmb.bdstatic.com/35ab7cb5ea7ca78efe61402961afbb6a.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_14,x_9,y_9)
+
+我们在新建一篇文章: 
+
+![](https://pic.rmb.bdstatic.com/945596cbefc8a6c248e7874d78f1a86d.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_17,x_11,y_11)
+
+![](https://pic.rmb.bdstatic.com/0cf1fa6cfbc175f63cd1849cdac649c2.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_11,x_7,y_7)
+
+这样可以更方便的管理我们的文章，我们使用一个编辑器打开我们的项目，可以使用vs code sublime等等，我这里使用vs code。
+
+打开后文章分为两部分：
+
+![](https://pic.rmb.bdstatic.com/3fabcf20b6ab27815b0eaf8a1bb6e2e0.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_13,x_9,y_9)
+
+上面最上方以---分隔的区域为Front-matter，可以理解为文章的配置区域，用于指定个别文件的变量。
+
+以下是预先定义的参数，您可在模板中使用这些参数值并加以利用。
+
+![](http://pic.rmb.bdstatic.com/7e5947111b139ddd8ed94e34ee5326408309.jpeg)
+
+文件内容部分为markdown语法和标签插件部分。
+
+**markdown语法:**
+
+Markdown是一种纯文本格式的标记语言。通过简单的标记语法，它可以使普通文本内容具有一定的格式。**
+</code></pre><p>**</p>
+<pre><code>1. 标题：在想要设置为标题的文字前面加#来表示，后面空格(标准语法一般在#后跟个空格再写文字，不过有些编辑器可以不写空格，但保险起见，还是写上空格吧)，在之后标题内容，一个#是一级标题，二个#是二级标题，以此类推。支持六级标题。例如: 
+
+2. 字体
+
+加粗：要加粗的文字左右分别用两个*号包起来
+
+斜体：要倾斜的文字左右分别用一个*号包起来
+
+斜体加粗：要倾斜和加粗的文字左右分别用三个*号包起来
+
+删除线：要加删除线的文字左右分别用两个~~号包起来
+
+3. 引用：在引用的文字前加&amp;gt;即可。引用也可以嵌套，如加两个&amp;gt;&amp;gt;，三个&amp;gt;&amp;gt;&amp;gt;，n个...，貌似可以一直加下去，但没神马用。
+
+4. 分割线：三个或者三个以上的 - 或者 * 都可以。
+
+5. 图片：
+
+语法： ！[图片alt](图片地址 &lt;span class=&quot;hljs-string&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;图片title&lt;span class=&quot;hljs-string&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
+
+说明: 图片alt就是显示在图片下面的文字，相当于对图片内容的解释。
+</code></pre><p>图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加。</p>
+<pre><code>6. 超链接：[超链接名](超链接地址 &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;超链接title&amp;quot;&lt;/span&gt;)
+
+7. 列表
+
+无序列表：用 - + * 任何一种都可以，- + * 跟内容之间都要有一个空格。
+
+有序列表: 数字加点。
+
+列表嵌套: 上一级和下一级之前敲三个空格即可。
+
+8. 表格
+
+![](https://pic.rmb.bdstatic.com/f8372c186f6315953267e1d89687023f.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_11,x_7,y_7)
+
+9. 代码块
+
+单行代码：代码之间分别用一个反引号包起来。
+
+代码块：代码之间分别用三个反引号包起来，且两边的反引号单独占一行。
+
+可以在其中一篇文章中敲入以下示例代码: 
+
+![](https://pic.rmb.bdstatic.com/8fb957588e7efdf7669e61bfd8d21218.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_20,x_13,y_13)
+
+![](https://pic.rmb.bdstatic.com/b6cdbf03370d8b0ef66ca7d576466f7f.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_20,x_13,y_13)
+
+![](https://pic.rmb.bdstatic.com/6e57af6fb95301d7fa3c9cfa97c06aa8.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_15,x_10,y_10)
+
+&lt;span class=&quot;hljs-params&quot;&gt;可以在浏览器中查看，部分效果如下：&lt;/span&gt;
+
+![](https://pic.rmb.bdstatic.com/35df62d6a3b631fd8e1ec8982619c05c.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_25,x_16,y_16)
+
+![](https://pic.rmb.bdstatic.com/6f87a70b980c13ae93914601a43cf0a0.png@wm_2,t_55m+5a625Y+3L+aQrOeglueggeWGnOeahOS6uueUnw==,fc_ffffff,ff_U2ltSGVp,sz_24,x_15,y_15)
+
+现在可以在hexo上发布编写文章了，在之后的文章中在继续讲解hexo的功能。&lt;span class=&quot;hljs-params&quot;&gt;
+</code></pre><p></p>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://xiangtao19940910.github.io" class="b-link-green">搬砖码农的人生</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2019/02/16/xiao-bai-ru-he-shi-yong-nodejs-hexo-kuai-su-da-jian-ge-ren-wang-zhan-hexo-xiang-xi-shi-yong-jiao-cheng-1/" class="b-link-green">小白如何使用Nodejs+Hexo快速搭建个人网站：Hexo详细使用教程1</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/02/16/xiao-bai-ru-he-shi-yong-nodejs-hexo-kuai-su-da-jian-ge-ren-wang-zhan-hexo-xiang-xi-shi-yong-jiao-cheng-2/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="小白如何使用Nodejs+Hexo快速搭建个人网站：Hexo详细使用教程2">
+                        
+                        <span class="card-title">小白如何使用Nodejs+Hexo快速搭建个人网站：Hexo详细使用教程2</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">### 
+    &lt;span class=&quot;year&quot;&gt;2019-02-15&lt;/span&gt;13:05
+
+![](https://pic.rmb.bdstatic.com/84064a42bf659</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            向涛
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hexo/" target="_blank">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                    <a href="/tags/Node-js/" target="_blank">
+                        <span class="chip bg-color">Node.js</span>
+                    </a>
+                    
+                    <a href="/tags/个人网站/" target="_blank">
+                        <span class="chip bg-color">个人网站</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/02/16/xiao-bai-ru-he-shi-yong-nodejs-hexo-kuai-su-da-jian-ge-ren-wang-zhan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="小白如何使用Nodejs+Hexo快速搭建个人网站">
+                        
+                        <span class="card-title">小白如何使用Nodejs+Hexo快速搭建个人网站</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">如果你非常想拥有一个完全属于自己的个人站点，本篇文章将帮助你一步一步搭建属于自己的个人网站。搭建个人站点的方式有多种多样，本篇主要介绍基于Node.js环境的使用Hexo在自己的电脑上搭建一个属于自己的网站。
+###    安装前提
+安装 </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            向涛
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hexo/" target="_blank">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                    <a href="/tags/Node-js/" target="_blank">
+                        <span class="chip bg-color">Node.js</span>
+                    </a>
+                    
+                    <a href="/tags/个人网站/" target="_blank">
+                        <span class="chip bg-color">个人网站</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 搬砖码农的人生<br />'
+            + '作者: 向涛<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/xiangtao19940910" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1782227898@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1782227898" class="tooltipped" data-tooltip="QQ联系我: 1782227898" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
